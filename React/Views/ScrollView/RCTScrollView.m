@@ -221,19 +221,7 @@ RCT_NOT_IMPLEMENTED(- (instancetype)init)
 
 - (void)scrollRectToVisible:(CGRect)rect animated:(BOOL)animated
 {
-  // Limiting scroll area to an area where we actually have content.
-  CGSize contentSize = self.contentSize;
-  UIEdgeInsets contentInset = self.contentInset;
-  CGSize fullSize = CGSizeMake(
-    contentSize.width + contentInset.left + contentInset.right,
-    contentSize.height + contentInset.top + contentInset.bottom);
-
-  rect = CGRectIntersection((CGRect){CGPointZero, fullSize}, rect);
-  if (CGRectIsNull(rect)) {
-    return;
-  }
-
-  [super scrollRectToVisible:rect animated:animated];
+ // noop
 }
 
 /**
