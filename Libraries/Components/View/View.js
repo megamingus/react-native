@@ -39,8 +39,8 @@ if (__DEV__) {
         <TextAncestor.Consumer>
           {hasTextAncestor => {
             invariant(
-              !hasTextAncestor,
-              'Nesting of <View> within <Text> is not currently supported.',
+              !hasTextAncestor || Platform.OS !== 'android',
+              'Nesting of <View> within <Text> is not supported on Android.',
             );
             return <ViewNativeComponent {...props} ref={forwardedRef} />;
           }}
