@@ -10,6 +10,7 @@
 
 'use strict';
 
+const Platform = require('Platform');
 const React = require('React');
 const TextAncestor = require('TextAncestor');
 const ViewNativeComponent = require('ViewNativeComponent');
